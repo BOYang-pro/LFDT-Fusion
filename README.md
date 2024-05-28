@@ -7,7 +7,7 @@ The code of "LFDT-Fusion: A Latent Feature-guided Diffusion Transformer Model fo
 
 ## Citation
 ```
-@InProceedings{,
+@article{,
     author    = {Bo Yang, Zhaohui Jiang, Dong Pan, Haoyang Yu, Gui Gui, Weihua Gui},
     title     = {LFDT-Fusion: A Latent Feature-guided Diffusion Transformer Model for General Image Fusion},
     booktitle = {-},
