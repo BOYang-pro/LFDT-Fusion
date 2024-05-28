@@ -4,6 +4,8 @@ The code of "LFDT-Fusion: A Latent Feature-guided Diffusion Transformer Model fo
 ## Update
 - [2024/6] Release model code for LFDT-Fusion.
 
+
+## Citation
 ```
 @InProceedings{,
     author    = {Bo Yang, Zhaohui Jiang, Dong Pan, Haoyang Yu, Gui Gui, Weihua Gui},
