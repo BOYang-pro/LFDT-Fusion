@@ -4,7 +4,8 @@ The code of "LFDT-Fusion: A Latent Feature-guided Diffusion Transformer Model fo
 
 ## Update
 - [2024/6] Release model code for LFDT-Fusion.
-- 
+
+- ....
 ## To be released
 - [ ] Pre-trained model
 - [ ] Testing code
