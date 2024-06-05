@@ -1,6 +1,6 @@
 # LFDT_code
 The code of "LFDT-Fusion: A Latent Feature-guided Diffusion Transformer Model for General Image Fusion"
-[![GitHub Stars](https://github.com/BOYang-pro/LFDT-Fusion)](https://github.com/BOYang-pro/LFDT-Fusion)
+[![GitHub Stars]](https://github.com/BOYang-pro/LFDT-Fusion)
 ## Update
 - [2024/6] Release model code for LFDT-Fusion.
 
