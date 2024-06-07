@@ -3,7 +3,7 @@
 The code of "LFDT-Fusion: A Latent Feature-guided Diffusion Transformer Model for General Image Fusion"
 
 ## Update
-- [2024/6] Release model code for LFDT-Fusion.
+- [2024/6] Release part of code for LFDT-Fusion.
 
 - ....
 ## To be released
