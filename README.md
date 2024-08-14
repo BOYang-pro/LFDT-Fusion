@@ -41,7 +41,8 @@ pip install -r requirements.txt
 
 ## Test
 You can directly test our model to generate fused images using the following code (note: the pre-training weights sholud be saved in the './check/' file)
-Link:[checkpoint]()
+
+Link:[checkpoint](https://drive.google.com/drive/folders/1BDhQ7wgpRDpF_4Yv6wqBzfykQHE_Dil8?usp=drive_link)
 ```
 #Visible and infrared image fusion
 python test-ir.py
@@ -155,7 +156,7 @@ python sample_all.py
 * See the article for more examples
 ## Citation
 ```
-@article{,
+@article{
     author    = {Bo Yang, Zhaohui Jiang, Dong Pan, Haoyang Yu, Gui Gui, Weihua Gui},
     title     = {LFDT-Fusion: A Latent Feature-guided Diffusion Transformer Model for General Image Fusion},
     booktitle = {Infornation Fusion},
