@@ -1,0 +1,80 @@
+{
+    "name": "fusion",
+    "phase": "train",
+    "gpu_ids": [2,3,4,5,6,7,8,9],
+    "distributed": true,
+    "display_port": 8097,
+    "path": {
+        "log": "logs",
+        "tb_logger": "tb_logger",
+        "results": "results",
+        "checkpoint": "checkpoint",
+        "resume_state": null
+    },
+    "datasets": {
+        "centered": true,
+        "train": {
+            "name": "dataset",
+            "crop_size": 256,
+            "dataroot_ir": "./dataset/train/VI-IR/ir/",
+            "dataroot_vi": "./dataset/train/VI-IR/vi/",
+            "dataroot_NIR": "./dataset/train/VI-NIR/NIR/",
+            "dataroot_Vis": "./dataset/train/VI-NIR/VI/",
+            "dataroot_DoLP": "./dataset/train/PIF/DoLP/",
+            "dataroot_S0": "./dataset/train/PIF/S0/",
+            "dataroot_SPECT_MRI": "./dataset/train/Med/SPECT-MRI/MRI/",
+            "dataroot_SPECT": "./dataset/train/Med/SPECT-MRI/SPECT/",
+            "dataroot_PET_MRI": "./dataset/train/Med/PET-MRI/MRI/",
+            "dataroot_PET": "./dataset/train/Med/PET-MRI/PET/",
+            "dataroot_over": "./dataset/train/MEF/over/",
+            "dataroot_under": "./dataset/train/MEF/under/",
+            "dataroot_source_1": "./dataset/train/MFF/source_1/",
+            "dataroot_source_2": "./dataset/train/MFF/source_2/",
+            "batch_size": 2,                                        
+            "num_workers":8,
+            "use_shuffle": false,
+            "is_crop"    : false
+        }
+    },
+    "model": {
+        "fusion_task": "VI-IR",
+        "Unet": {
+            "LDM": "U_LDM",
+            "in_ch": 1,
+            "out_ch": 1,
+            "LDM_embed_dim": 8,
+            "LDM_ch": 64,
+            "ch_mult":[1, 2, 4]
+        },
+        "Fusion": {
+            "sample_selected": "ddp-solver++",
+            "model_selected": "DFT",
+            "mode":            "MAX",
+            "inference_steps": 5,
+            "num_train_timesteps": 1000,
+            "channel_emdin": 8,
+            "num_blocks":[4, 4, 4, 4],    
+            "heads":   [1, 2, 4, 8],
+            "feat_channels":  [32,64,128,256]
+        }
+    },
+    "train": {
+        "n_epoch": 60,
+        "val_freq": 2,
+        "save_checkpoint_epoch": 30,
+        "print_freq": 2,
+        "ema_decay": 0.999,
+        "warmup_iter": -1,
+        "scheduler":{
+            "type": "CosineAnnealingRestartCyclicLR",
+            "periods": [15, 15,15,16],
+            "restart_weights": [1,1,0.5,0.5],
+            "eta_mins": [0.0003, 0.00001, 0.00001, 0.00001]
+        },
+        "optimizer": {
+            "type": "AdamW",
+            "lr": 3e-4,
+            "weight_decay": 1e-4
+        }
+    }
+}

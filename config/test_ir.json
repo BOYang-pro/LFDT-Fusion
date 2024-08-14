@@ -1,0 +1,47 @@
+{
+    "name": "fusion",
+    "phase": "test",
+    "gpu_ids": [1],
+    "distributed": true,
+    "display_port": 8097,
+    "path": {
+        "log": "logs",
+        "tb_logger": "tb_logger",
+        "results": "results",
+        "checkpoint": "checkpoint",
+        "resume_state": "./check/IR/IR.pth"
+    },
+    "datasets": {
+        "centered": true,
+        "train": {
+            "name": "dataset",
+            "crop_size": 256,
+            "batch_size": 1,
+            "num_workers":8,
+            "use_shuffle": false,
+            "is_crop"    : false
+        }
+    },
+    "model": {
+        "fusion_task": "VI-IR",
+         "Unet": {
+            "LDM": "U_LDM",
+            "in_ch": 1,
+            "out_ch": 1,
+            "LDM_embed_dim": 8,
+            "LDM_ch": 64,
+            "ch_mult":[1, 2, 4]
+        },
+        "Fusion": {
+            "sample_selected": "ddp-solver++",
+            "model_selected": "DFT",
+            "mode":            "MAX",
+            "inference_steps": 5,
+            "num_train_timesteps": 1000,
+            "channel_emdin": 8,
+            "num_blocks":[4, 4, 4, 4],    
+            "heads":   [1, 2, 4, 8],
+            "feat_channels":  [32,64,128,256]
+        }
+    }
+}
