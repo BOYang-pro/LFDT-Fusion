@@ -40,7 +40,8 @@ pip install -r requirements.txt
 
 
 ## Test
-You can directly test our model to generate fused images using the following code (note: the pre-training weights have been saved in the './check/' file)
+You can directly test our model to generate fused images using the following code (note: the pre-training weights sholud be saved in the './check/' file)
+Link:[checkpoint]()
 ```
 #Visible and infrared image fusion
 python test-ir.py
