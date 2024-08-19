@@ -235,7 +235,6 @@ class DenoisePipiline:
 
             image = self.scheduler.add_noise(image, noise, timesteps[:1]).to(device)  # Add noise
             noise_image = image
-            #逐渐遍历时间步骤
             for t in self.scheduler.timesteps:
                 image = self.scheduler.scale_model_input(image, t)
                 # Prediction model noise and retain intermediate features
@@ -256,9 +255,9 @@ class DenoisePipiline:
                 image = self.scheduler.step(model_output, t, image, generator=generator)['prev_sample']
         
         if not return_dict:
-            return (image,noise_image,model_output,middle_feat)
+            return (image,noise,model_output,middle_feat)
 
-        return {'images': image,'noise_image':noise_image}
+        return {'images': image,'noise':noise}
 
 
 
