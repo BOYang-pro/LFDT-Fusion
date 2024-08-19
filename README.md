@@ -113,7 +113,7 @@ train
 │   ├──over                                    │   ├──source_1
 │   │   ├──0000.png                            │   │   ├──0000.png
 ...                                            ...
-│   ├──under
+│   ├──under                                   │   ├──source_2
 │   │   ├──0000.png                            │   │   ├──0000.png
 ...                                            ...
 ```
