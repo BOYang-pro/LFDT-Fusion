@@ -124,7 +124,7 @@ python -m torch.distributed.launch  --nproc_per_node=8 train.py --sample_selecte
 ```
 * nproc_per_node: This parameter represents the number of GPU. （Note: If you want to change nproc_per_node, the device number of "gpu_ids" in the configuration file './config/train.json' needs to be changed as well. For example, if nproc_per_node=2, gpu_ids=[0,1].）
 
-* sample_selected： This parameter represents the selection of the diffusion sampler. There are nine diffusion samplers to choose from: "DDIM, ddp-solver, ddp-solver++, Deis, Unipc, Heun, Euler". The default value is ddp-solver++.
+* sample_selected： This parameter represents the selection of the diffusion sampler. There are nine diffusion samplers to choose from: "DDIM, ddp-solver, ddp-solver++, Deis, Unipc, Heun, Euler". The default value is ddp-solver++. Here ddp-solver++ is DPM-Solver++.
 
 * model_selected: This parameter represents a denoising network, which defaults to a Diffusion Transformer network (DFT).
 
