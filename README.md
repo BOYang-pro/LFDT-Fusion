@@ -160,5 +160,8 @@ python sample_all.py
     author    = {Bo Yang, Zhaohui Jiang, Dong Pan, Haoyang Yu, Gui Gui, Weihua Gui},
     title     = {LFDT-Fusion: A Latent Feature-guided Diffusion Transformer Model for General Image Fusion},
     booktitle = {Infornation Fusion},
+    year      = {2024},
+    pages     = {102639},
+    doi       = {doi.org/10.1016/j.inffus.2024.102639},
 }
 ```
